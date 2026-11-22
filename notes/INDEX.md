@@ -5,5 +5,5 @@ ChatGPT と Claude のどちらで話しても、ここを見れば続きから�
 
 | 日付 | 話題 | ファイル | 状態 |
 |---|---|---|---|
-| 2026-11-22 | luce-corp.com のWebサイト改善提案（パワーポイント・改訂版あり） | [2026-11-22-luce-web-proposal.md](2026-11-22-luce-web-proposal.md) | 確認待ち |
+| 2026-11-22 | luce-corp.com のWebサイト改善提案（役員会向け第3版・デモサイトあり） | [2026-11-22-luce-web-proposal.md](2026-11-22-luce-web-proposal.md) | 確認待ち |
 | 2026-11-22 | ChatGPT と Claude の連動のしくみ作り | [2026-11-22-setup.md](2026-11-22-setup.md) | 完了 |
