@@ -21,7 +21,7 @@ import anthropic
 import openai
 
 CLAUDE_MODEL = os.environ.get("CLAUDE_MODEL", "claude-opus-5-5")
-OPENAI_MODEL = os.environ.get("OPENAI_MODEL", "gpt-5")
+OPENAI_MODEL = os.environ.get("OPENAI_MODEL", "gpt-6.2-sol")
 CLAUDE_EFFORT = os.environ.get("CLAUDE_EFFORT", "high")
 LOG_DIR = Path(__file__).parent / "logs"
 

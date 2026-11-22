@@ -36,6 +36,6 @@ python harry.py -q "..."                 # 途中経過を隠して最終回答�
 
 | 変数 | 既定値 | 内容 |
 |---|---|---|
-| `OPENAI_MODEL` | `gpt-5` | 使う ChatGPT のモデル |
+| `OPENAI_MODEL` | `gpt-6.2-sol` | 使う ChatGPT のモデル |
 | `CLAUDE_MODEL` | `claude-opus-5-5` | 使う Claude のモデル |
 | `CLAUDE_EFFORT` | `high` | Claude の思考の深さ（`low`〜`max`） |
