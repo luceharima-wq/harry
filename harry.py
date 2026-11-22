@@ -33,7 +33,9 @@ SYSTEM = (
 
 class Harry:
     def __init__(self, rounds: int = 1) -> None:
-        self.claude = anthropic.Anthropic()
+        # HARRY_ANTHROPIC_API_KEY を優先（クラウド環境で Claude Code 本体のキーと分けるため）
+        key = os.environ.get("HARRY_ANTHROPIC_API_KEY") or os.environ.get("ANTHROPIC_API_KEY")
+        self.claude = anthropic.Anthropic(api_key=key)
         self.gpt = openai.OpenAI()
         self.rounds = rounds
         # 確定した Q&A の履歴（追加質問の文脈として両AIに渡す）
@@ -140,7 +142,11 @@ def main() -> None:
     args = p.parse_args()
     VERBOSE = not args.quiet
 
-    missing = [k for k in ("OPENAI_API_KEY", "ANTHROPIC_API_KEY") if not os.environ.get(k)]
+    missing = []
+    if not os.environ.get("OPENAI_API_KEY"):
+        missing.append("OPENAI_API_KEY")
+    if not (os.environ.get("HARRY_ANTHROPIC_API_KEY") or os.environ.get("ANTHROPIC_API_KEY")):
+        missing.append("HARRY_ANTHROPIC_API_KEY（または ANTHROPIC_API_KEY）")
     if missing:
         print("APIキーが設定されていません: " + ", ".join(missing), file=sys.stderr)
         print("README.md の「準備」を見て設定してください。", file=sys.stderr)

@@ -18,6 +18,9 @@ export OPENAI_API_KEY="..."      # https://platform.openai.com/api-keys
 export ANTHROPIC_API_KEY="..."   # https://console.anthropic.com/
 ```
 
+Claude Code のクラウド環境で動かす場合は、`ANTHROPIC_API_KEY` の代わりに
+`HARRY_ANTHROPIC_API_KEY` という名前で設定してください（Claude Code 本体がそのキーを使ってしまうのを防ぐため）。
+
 ※ ChatGPT Plus などの月額プランとは別に、API の利用料（従量課金）がかかります。
 
 ## 使い方
