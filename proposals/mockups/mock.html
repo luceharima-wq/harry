@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8">
+<style>
+:root{--navy:#1E2A5A;--navy2:#2A3870;--gold:#B8975A;--pale:#EADFC2;--mist:#F2F4F8;--ink:#1B1F2E;--gray:#6B7280;--line:#06C755}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"IPAPGothic","IPAGothic",sans-serif;color:var(--ink);background:#ddd}
+.frame{background:#fff;overflow:hidden;position:relative;margin:20px}
+.d{width:1366px;height:800px}
+.p{width:390px;height:844px}
+.serif{font-family:"DejaVu Serif",serif}
+header{display:flex;align-items:center;justify-content:space-between;padding:0 56px;height:84px}
+header img{height:52px}
+nav{display:flex;gap:30px;font-size:14px;letter-spacing:.1em;align-items:center}
+.hcta{background:var(--gold);color:#fff;padding:10px 18px;border-radius:24px;font-weight:bold;letter-spacing:.05em}
+.btn{display:inline-flex;align-items:center;justify-content:center;border-radius:40px;font-weight:bold;letter-spacing:.04em}
+.gold{background:var(--gold);color:#fff}
+.ghost{border:2px solid var(--gold);color:var(--navy);background:#fff}
+.tag{display:inline-block;font-size:12px;font-weight:bold;color:var(--gold);letter-spacing:.15em}
+.note{font-size:11px;color:var(--gray)}
+.ph{background:#FFF4D6;color:#8A6D1F;border-radius:4px;padding:0 4px;font-weight:bold}
+/* TOP desktop */
+#top-d{background:linear-gradient(rgba(20,26,58,.78),rgba(20,26,58,.86)),url(img/i_mv_bg01.jpg) center/cover;color:#fff}
+#top-d nav{color:#fff}
+#top-d .hero{padding:56px 56px 0}
+#top-d h1{font-size:50px;line-height:1.35;letter-spacing:.04em}
+#top-d .sub{font-size:18px;margin-top:16px;opacity:.92}
+.goals{display:flex;gap:22px;margin-top:40px}
+.goal{flex:1;background:#fff;color:var(--ink);border-radius:16px;padding:22px 24px;display:flex;gap:18px;align-items:center;box-shadow:0 8px 24px rgba(0,0,0,.25)}
+.goal img{width:92px;height:92px;object-fit:cover;border-radius:50%}
+.goal .who{font-size:13px;color:var(--gray)}
+.goal .what{font-size:21px;font-weight:bold;color:var(--navy);margin:4px 0 10px}
+.goal .btn{font-size:14px;padding:9px 16px}
+.stats{position:absolute;left:0;right:0;bottom:0;background:rgba(255,255,255,.97);color:var(--ink);display:flex;padding:20px 56px;gap:0}
+.stat{flex:1;border-left:1px solid #D9DDE6;padding-left:22px}
+.stat:first-child{border-left:none;padding-left:0}
+.stat b{display:block;font-size:30px;color:var(--navy)}
+.stat span{font-size:13px;color:var(--gray)}
+/* phone common */
+.p header{padding:0 18px;height:64px}
+.p header img{height:38px}
+.burger{width:28px;height:18px;border-top:3px solid;border-bottom:3px solid;position:relative}
+.burger:after{content:"";position:absolute;left:0;right:0;top:4.5px;border-top:3px solid}
+.fixed{position:absolute;left:0;right:0;bottom:0;padding:12px 16px 22px;background:rgba(255,255,255,.96);box-shadow:0 -4px 16px rgba(0,0,0,.12)}
+/* TOP phone */
+#top-p{background:linear-gradient(rgba(20,26,58,.8),rgba(20,26,58,.9)),url(img/i_mv_bg01.jpg) center/cover;color:#fff}
+#top-p .hero{padding:18px 20px}
+#top-p h1{font-size:27px;line-height:1.45}
+#top-p .sub{font-size:13px;margin-top:10px;opacity:.9}
+.pgoal{display:flex;align-items:center;gap:12px;background:#fff;color:var(--ink);border-radius:14px;padding:12px 14px;margin-top:12px}
+.pgoal img{width:56px;height:56px;border-radius:50%;object-fit:cover}
+.pgoal .what{font-weight:bold;color:var(--navy);font-size:16px}
+.pgoal .go{font-size:12px;color:var(--gold);font-weight:bold;margin-top:3px}
+.pstats{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:16px}
+.pstats div{background:rgba(255,255,255,.12);border-radius:10px;padding:10px}
+.pstats b{font-size:20px;display:block}
+.pstats span{font-size:11px;opacity:.85}
+/* Auction desktop */
+.light header{border-bottom:1px solid #E5E7EB}
+.light nav{color:var(--ink)}
+.crumb{font-size:12px;color:var(--gray);padding:14px 56px}
+#auc .wrap,#sem .wrap{display:flex;gap:40px;padding:10px 56px}
+#auc h1,#sem h1{font-size:36px;line-height:1.45;color:var(--navy)}
+.lead{font-size:15px;line-height:1.8;margin-top:12px}
+.sched{background:var(--mist);border-radius:16px;padding:18px 22px;margin-top:22px}
+.sched h3{font-size:15px;color:var(--navy);margin-bottom:10px}
+.row{display:flex;justify-content:space-between;align-items:center;background:#fff;border-radius:10px;padding:10px 14px;margin-top:8px;font-size:15px}
+.row .btn{font-size:13px;padding:7px 14px}
+.hero-img{width:470px;height:300px;object-fit:cover;border-radius:18px}
+.guide{border:1px solid #D9DDE6;border-radius:16px;padding:16px 20px;margin-top:18px}
+.guide table{width:100%;border-collapse:collapse;font-size:14px}
+.guide td{padding:7px 4px;border-bottom:1px solid #EEF0F4}
+.guide td:first-child{color:var(--gray);width:120px}
+.next{font-size:13px;color:var(--navy);background:var(--pale);border-radius:8px;padding:8px 12px;margin-top:14px;font-weight:bold}
+/* Purchase phone */
+#buy{background:#fff}
+#buy .hero{background:linear-gradient(rgba(20,26,58,.82),rgba(20,26,58,.9)),url(img/c_business_p04.jpg) center/cover;color:#fff;padding:22px 20px 20px}
+#buy h1{font-size:25px;line-height:1.45}
+.linebtn{background:var(--line);color:#fff;border-radius:40px;font-weight:bold;font-size:17px;padding:14px;text-align:center;display:block}
+.small{font-size:11.5px;line-height:1.6}
+.steps{display:flex;gap:6px;padding:16px 16px 6px}
+.steps div{flex:1;background:var(--mist);border-radius:10px;padding:10px 6px;text-align:center;font-size:12px;font-weight:bold;color:var(--navy)}
+.steps i{display:block;font-style:normal;color:var(--gold);font-size:18px}
+.chips{padding:8px 16px;display:flex;flex-wrap:wrap;gap:6px}
+.chips span{border:1px solid #D9DDE6;border-radius:20px;padding:4px 10px;font-size:12px}
+.free{margin:10px 16px;border-radius:12px;background:var(--pale);padding:10px 12px;font-size:12.5px;line-height:1.7}
+.rev{margin:8px 16px;border:1px solid #D9DDE6;border-radius:12px;padding:10px 12px;font-size:12.5px}
+.stars{color:#E0A800;font-size:16px;letter-spacing:2px}
+/* Inquiry desktop */
+#inq h1{font-size:34px;color:var(--navy);padding:22px 56px 4px}
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;padding:18px 56px}
+.tile{border:1px solid #D9DDE6;border-radius:16px;padding:18px 20px;position:relative}
+.tile.main{background:var(--mist);border-color:var(--mist)}
+.tile h3{font-size:18px;color:var(--navy)}
+.tile p{font-size:13px;color:var(--gray);margin-top:6px;line-height:1.6}
+.tile .to{margin-top:12px;font-size:13px;font-weight:bold;color:var(--gold)}
+.done{position:absolute;right:56px;bottom:28px;width:420px;background:var(--navy);color:#fff;border-radius:16px;padding:18px 22px;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+.done h4{font-size:17px}
+.done li{font-size:13px;margin:6px 0 0 18px;line-height:1.6}
+</style></head><body>
+
+<!-- A. TOP desktop -->
+<div class="frame d" id="top-d">
+  <header><img src="img/logo01.png"><nav><span>事業内容</span><span>企業情報</span><span>ニュース</span><span>採用情報</span><span>お問い合わせ</span></nav></header>
+  <div class="hero">
+    <div class="tag" style="color:var(--pale)">BRAND REUSE SINCE 1999</div>
+    <h1>ブランド品の仕入れ・出品、<br>鑑定の学び、買取を。</h1>
+    <div class="sub">東京・大阪で、ブランドリユースに関わるすべての方を支えるLUCEです。</div>
+    <div class="goals">
+      <div class="goal"><img src="img/c_business_p02.jpg"><div><div class="who">買取店・リユース業者の方</div><div class="what">仕入れ・出品したい</div><span class="btn gold">オークションの日程・参加条件</span></div></div>
+      <div class="goal"><img src="img/c_business_p03.png"><div><div class="who">これから始める方</div><div class="what">鑑定を学びたい</div><span class="btn gold">無料セミナーの日程を見る</span></div></div>
+      <div class="goal"><img src="img/c_business_p04.jpg"><div><div class="who">一般のお客様</div><div class="what">ブランド品を売りたい</div><span class="btn gold">写真で査定を相談する</span></div></div>
+    </div>
+  </div>
+  <div class="stats">
+    <div class="stat"><b class="serif">1999<small style="font-size:16px">年</small></b><span>創業</span></div>
+    <div class="stat"><b class="serif">57<small style="font-size:16px">億円</small></b><span>年商（<span class="ph">◯年◯月期</span>）</span></div>
+    <div class="stat"><b class="serif">月平均8<small style="font-size:16px">回</small></b><span>オークション開催（<span class="ph">集計期間</span>）</span></div>
+    <div class="stat"><b class="serif">600<small style="font-size:16px">店舗+</small></b><span>支援店舗数</span></div>
+    <div class="stat"><b style="font-size:20px;padding-top:8px">東京・大阪</b><span>2拠点／テクノロジーズグループ</span></div>
+  </div>
+</div>
+
+<!-- B. TOP phone -->
+<div class="frame p" id="top-p">
+  <header><img src="img/logo01.png"><div class="burger" style="color:#fff"></div></header>
+  <div class="hero">
+    <h1>ブランド品の仕入れ・出品、<br>鑑定の学び、買取を。</h1>
+    <div class="sub">1999年創業。東京・大阪のブランドリユース企業です。</div>
+    <div class="pgoal"><img src="img/c_business_p02.jpg"><div><div class="what">仕入れ・出品したい</div><div class="go">オークションの日程・参加条件 ›</div></div></div>
+    <div class="pgoal"><img src="img/c_business_p03.png"><div><div class="what">鑑定を学びたい</div><div class="go">無料セミナーの日程を見る ›</div></div></div>
+    <div class="pgoal"><img src="img/c_business_p04.jpg"><div><div class="what">ブランド品を売りたい</div><div class="go">写真で査定を相談する ›</div></div></div>
+    <div class="pstats">
+      <div><b class="serif">1999年</b><span>創業</span></div>
+      <div><b class="serif">57億円</b><span>年商（◯年◯月期）</span></div>
+      <div><b class="serif">月平均8回</b><span>オークション開催</span></div>
+      <div><b class="serif">600店舗+</b><span>支援店舗数</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- C. Auction desktop -->
+<div class="frame d light" id="auc">
+  <header><img src="img/logo02.png"><nav><span>事業内容</span><span>企業情報</span><span>ニュース</span><span>採用情報</span><span class="hcta">会員登録</span></nav></header>
+  <div class="crumb">ホーム › 事業内容 › オークション事業</div>
+  <div class="wrap">
+    <div style="flex:1">
+      <div class="tag">AUCTION</div>
+      <h1>ブランド品の仕入れ・出品を、<br>東京・大阪のオークションで。</h1>
+      <div class="lead">バッグ・時計・宝石・貴金属を中心に、平均月8回開催。会場に来られない日も、専用アプリでリアルタイムに入札できます。</div>
+      <div class="sched"><h3>次回の開催日程</h3>
+        <div class="row"><span><b><span class="ph">◯月◯日（◯）</span></b>　東京会場（新宿）</span><span class="btn gold">下見・参加の案内</span></div>
+        <div class="row"><span><b><span class="ph">◯月◯日（◯）</span></b>　大阪会場（梅田）</span><span class="btn gold">下見・参加の案内</span></div>
+      </div>
+      <div style="display:flex;gap:14px;margin-top:18px"><span class="btn gold" style="padding:13px 30px;font-size:16px">買いたい：会員登録へ進む</span><span class="btn ghost" style="padding:11px 28px;font-size:16px">出品したい：条件を相談する</span></div>
+    </div>
+    <div style="width:470px">
+      <img class="hero-img" src="img/c_business_p02.jpg">
+      <div class="guide"><div class="tag">初参加ガイド</div>
+        <table><tr><td>参加資格</td><td>古物商許可をお持ちの事業者さま <span class="ph">要確認</span></td></tr>
+        <tr><td>手数料</td><td><span class="ph">落札・出品手数料を記載</span></td></tr>
+        <tr><td>支払・精算</td><td><span class="ph">支払期限・精算日を記載</span></td></tr>
+        <tr><td>困ったとき</td><td>オークション窓口（受付 <span class="ph">◯時〜◯時</span>）</td></tr></table>
+        <div class="next">登録 → 審査のご連絡 → 下見・入札（アプリ可）</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- D. Seminar desktop -->
+<div class="frame d light" id="sem">
+  <header><img src="img/logo02.png"><nav><span>事業内容</span><span>企業情報</span><span>ニュース</span><span>採用情報</span><span class="hcta">無料セミナー予約</span></nav></header>
+  <div class="crumb">ホーム › 事業内容 › セミナー・スクール事業</div>
+  <div class="wrap">
+    <div style="flex:1">
+      <div class="tag">SEMINAR</div>
+      <h1>実物で学ぶ、ブランド品の真贋鑑定。<br>まずは無料セミナーへ。</h1>
+      <div class="lead">店頭買取10年以上の現役鑑定士が講師。実物の商品を手に取りながら、真贋の見分け方と相場の調べ方を学べます。</div>
+      <div class="sched"><h3>無料セミナーの日程（要予約）</h3>
+        <div class="row"><span><b><span class="ph">◯月◯日（◯）14:00</span></b>　東京・新宿　<span class="note">残り<span class="ph">◯</span>席</span></span><span class="btn gold">この日程を予約する</span></div>
+        <div class="row"><span><b><span class="ph">◯月◯日（◯）14:00</span></b>　大阪・梅田　<span class="note">残り<span class="ph">◯</span>席</span></span><span class="btn gold">この日程を予約する</span></div>
+      </div>
+      <div class="next" style="margin-top:16px">予約 → 確認メール（会場・持ち物） → 当日参加　｜　日程変更はメールから</div>
+    </div>
+    <div style="width:470px">
+      <img class="hero-img" src="img/c_business_p03.png">
+      <div class="guide"><div class="tag">無料セミナーと有料スクールの違い</div>
+        <table><tr><td>無料セミナー</td><td>真贋鑑定の基本・雰囲気を知る（約<span class="ph">◯</span>時間）</td></tr>
+        <tr><td>有料スクール</td><td>仕入れ〜売却まで実践。料金 <span class="ph">◯円</span>・期間 <span class="ph">◯か月</span></td></tr>
+        <tr><td>道具</td><td>AI鑑定士「ルーちゃん」の使い方も学べます</td></tr></table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- E. Purchase phone -->
+<div class="frame p" id="buy">
+  <div class="hero">
+    <header style="padding:0;height:46px"><img src="img/logo01.png" style="height:34px"><div class="burger" style="color:#fff"></div></header>
+    <h1 style="margin-top:12px">売りたいブランド品、<br>まずは写真で査定相談。</h1>
+    <div class="small" style="margin:8px 0 14px;opacity:.9">自社オークションと海外バイヤーへの販路があるから、査定に自信があります。</div>
+    <span class="linebtn">LINEで査定を相談する</span>
+    <div class="small" style="margin-top:8px;text-align:center">受付 <span class="ph">◯時</span>まで → <span class="ph">当日中</span>に返信目安｜査定無料</div>
+  </div>
+  <div class="steps"><div><i>1</i>写真を送る</div><div><i>2</i>概算をご案内</div><div><i>3</i>ご納得後に<br>本査定</div></div>
+  <div class="tag" style="padding:8px 16px 0">買取できる品目</div>
+  <div class="chips"><span>バッグ</span><span>腕時計</span><span>ジュエリー</span><span>宝石</span><span>金・プラチナ</span><span>財布・小物</span></div>
+  <div class="free">査定・キャンセル無料。宅配の返送料は <span class="ph">条件を明記</span>。<br>本人確認は本査定のときにお願いします（古物営業法）。</div>
+  <div class="rev"><span class="stars">★★★★★</span> <b><span class="ph">◯.◯</span></b>（<span class="ph">◯件</span>）Googleの口コミを見る ›<div class="note">プレミアムルーチェ 梅田店・<span class="ph">取得日</span>時点</div></div>
+  <div class="fixed"><span class="linebtn" style="font-size:15px;padding:12px">LINEで査定を相談する</span></div>
+</div>
+
+<!-- F. Inquiry desktop -->
+<div class="frame d light" id="inq">
+  <header><img src="img/logo02.png"><nav><span>事業内容</span><span>企業情報</span><span>ニュース</span><span>採用情報</span><span>お問い合わせ</span></nav></header>
+  <h1>ご用件を選んでください</h1>
+  <div class="note" style="padding:0 56px;font-size:14px">ご用件に合った窓口へご案内します。各窓口の受付時間と返信の目安を記載しています。</div>
+  <div class="tiles">
+    <div class="tile main"><h3>オークションに参加・出品したい</h3><p>会員登録・出品のご相談<br>返信目安：<span class="ph">◯営業日以内</span></p><div class="to">オークション窓口へ ›</div></div>
+    <div class="tile main"><h3>セミナーを予約したい</h3><p>無料セミナーの予約・日程変更<br>予約後すぐに確認メールが届きます</p><div class="to">日程を選んで予約 ›</div></div>
+    <div class="tile main"><h3>ブランド品を売りたい</h3><p>LINEで写真を送るだけ<br>返信目安：<span class="ph">当日中</span></p><div class="to">LINE査定へ ›</div></div>
+    <div class="tile"><h3>取材・メディア</h3><p>取材・出演・登壇のご依頼</p><div class="to">取材フォーム ›</div></div>
+    <div class="tile"><h3>提携・お取引</h3><p>業務提携・鑑定支援のご相談</p><div class="to">提携フォーム ›</div></div>
+    <div class="tile"><h3>その他</h3><p>上記以外のお問い合わせ</p><div class="to">お問い合わせフォーム ›</div></div>
+  </div>
+  <div class="done"><h4>送信後の画面（イメージ）</h4><ul><li>受付番号と「受付しました」の表示</li><li>次に起きること：担当より<span class="ph">◯営業日以内</span>にご連絡</li><li>返信が届かない場合の連絡先</li></ul></div>
+</div>
+</body></html>
